@@ -2,7 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class model(nn.Module):
+
+class Model(nn.Module):
     def __init__(self) -> None:
         super().__init__()
         self.conv1 = nn.Conv2d(out_channels=5, in_channels=3, kernel_size=(2,2), stride=2) #input size is 256x256x3, output is 128x128x5
@@ -23,6 +24,8 @@ class model(nn.Module):
         #Decrease to the three dimensions where the first represent bear the second represents brownies and the third is ducks
         preds = self.linearLayer2(midD_embed)
         return preds
+
+model = Model()
 
 
 
